@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NumberDuels2026</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <h1>NumberDuels2026</h1>
+    <p id="globalStatus">не підключено</p>
+
+    <section id="stageLobby" class="stage active">
+      <h2>Лобі</h2>
+      <input id="playerName" placeholder="Твоє ім'я" />
+      <input id="roomCodeInput" placeholder="Код кімнати" />
+      <button id="createRoomBtn">Створити кімнату</button>
+      <button id="joinRoomBtn">Приєднатись</button>
+      <button id="copyRoomBtn">Скопіювати код</button>
+    </section>
+
+    <section id="stagePrepare" class="stage">
+      <h2>Підготовка</h2>
+      <p id="prepareStatus"></p>
+      <input id="secretNumberInput" type="number" placeholder="Секретне число" />
+      <button id="setSecretBtn">Підтвердити число</button>
+    </section>
+
+    <section id="stageBattle" class="stage">
+      <h2>Дуель</h2>
+      <p id="turnBanner"></p>
+      <input id="guessInput" type="number" placeholder="Твоя спроба" />
+      <button id="guessBtn">Відправити</button>
+      <div id="historyList"></div>
+      <div id="chatList"></div>
+      <input id="chatInput" placeholder="Повідомлення" />
+      <button id="sendChatBtn">Надіслати</button>
+    </section>
+
+    <section id="stageResult" class="stage">
+      <h2 id="resultTitle"></h2>
+      <p id="resultText"></p>
+      <button id="rematchBtn">Рематч</button>
+      <div id="resultHistoryList"></div>
+    </section>
+
+    <button id="leaveRoomBtnA">Вийти</button>
+    <button id="leaveRoomBtnB">Вийти</button>
+    <button id="leaveRoomBtnC">Вийти</button>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
